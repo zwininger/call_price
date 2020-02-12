@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Call Price Calculator</title>
+  </head>
+  <body>
+    <h1> Call Price Calculator </h1>
+    <p> Calculate call price for a stock given specified inputs. </p>
+    <h3>
+      <div class="content-section">
+        <form method="POST" action="">
+          {{form.hidden_tag()}}
+          <fieldset class="form-group">
+            <legend class="border-bottom mb-4" >Enter inputs</legend>
+            <div class="form-group">
+              {{form.underlying_price.label(class="form-control-label")}}
+              {{form.underlying_price(class="form-control form-control-lg")}}
+            </div>
+            <div class="form-group">
+              {{form.strike_price.label(class="form-control-label")}}
+              {{form.strike_price(class="form-control form-control-lg")}}
+            </div>
+            <div class="form-group">
+              {{form.interest_rate.label(class="form-control-label")}}
+              {{form.interest_rate(class="form-control form-control-lg")}}
+            </div>
+            <div class="form-group">
+              {{form.days_to_expiry.label(class="form-control-label")}}
+              {{form.days_to_expiry(class="form-control form-control-lg")}}
+            </div>
+            <div class="form-group">
+              {{form.volatility.label(class="form-control-label")}}
+              {{form.volatility(class="form-control form-control-lg")}}
+            </div>
+            <div class="form-group">
+              {{form.option_type.label(class="form-control-label")}}
+              {{form.option_type(class="form-control form-control-lg")}}
+            </div>
+            <div class="form-group">
+              {{form.side.label(class="form-control-label")}}
+              {{form.side(class="form-control form-control-lg")}}
+            </div>
+          </fieldset>
+          <div class="form-group">
+            {{form.submit(class="btn btn-outline-info")}}
+          </div>
+        </form>
+      </div>
+      <h2>Call Price:</h2>
+      {{'$%0.2f'|format(call)}}
+    </h3>
+  </body>
+</html>
